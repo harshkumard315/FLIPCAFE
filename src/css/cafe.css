@@ -1,0 +1,650 @@
+/* Café-specific styles */
+
+:root {
+  --cafe-primary: #7e3fa3;
+  --cafe-secondary: #ff9100;
+  --cafe-accent: #4caf50;
+  --cafe-light: #f3e5f5;
+}
+
+.dark-theme {
+  --cafe-primary: #9c4fd0;
+  --cafe-light: #311b3b;
+}
+
+/* Café Header */
+.cafe-header {
+  background-color: var(--cafe-primary);
+}
+
+/* Café Hero Section */
+.cafe-hero {
+  background: linear-gradient(to right, var(--cafe-primary), #4a148c);
+  padding: var(--spacing-xl) 0;
+  color: var(--white);
+}
+
+.cafe-hero-content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.cafe-hero-text {
+  flex: 1;
+}
+
+.cafe-hero-text h1 {
+  font-size: 42px;
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+}
+
+.cafe-hero-text h2 {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.9;
+}
+
+.location-bar {
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.location-bar svg {
+  color: var(--cafe-primary);
+  margin-right: var(--spacing-sm);
+  min-width: 20px;
+}
+
+.location-bar input {
+  flex: 1;
+  border: none;
+  padding: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+}
+
+.location-bar input:focus {
+  outline: none;
+}
+
+.location-bar button {
+  background-color: var(--cafe-secondary);
+  color: var(--white);
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.location-bar button:hover {
+  background-color: #f57c00;
+}
+
+.delivery-info {
+  display: flex;
+  gap: var(--spacing-xl);
+}
+
+.delivery-time, .delivery-fee {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.delivery-time svg, .delivery-fee svg {
+  color: var(--cafe-secondary);
+}
+
+.cafe-hero-image {
+  flex: 1;
+  max-width: 400px;
+}
+
+.cafe-hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform var(--transition-normal);
+}
+
+.cafe-hero-image img:hover {
+  transform: translateY(-10px);
+}
+
+/* Café Categories */
+.cafe-categories {
+  background-color: var(--white);
+  box-shadow: 0 2px 4px var(--shadow-color);
+  position: sticky;
+  top: var(--header-height);
+  z-index: 90;
+}
+
+.category-tabs {
+  display: flex;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.category-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.category-tab {
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-weight: 500;
+  color: var(--text-color);
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.category-tab:hover {
+  color: var(--cafe-primary);
+}
+
+.category-tab.active {
+  color: var(--cafe-primary);
+  border-bottom-color: var(--cafe-primary);
+}
+
+/* Café Menu */
+.cafe-menu {
+  padding: var(--spacing-xl) 0;
+}
+
+.cafe-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.cafe-item {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  cursor: pointer;
+}
+
+.cafe-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px var(--shadow-color);
+}
+
+.cafe-item-image {
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+
+.cafe-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.cafe-item:hover .cafe-item-image img {
+  transform: scale(1.05);
+}
+
+.item-veg {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--white);
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid var(--success-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-veg::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--success-color);
+}
+
+.item-non-veg {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--white);
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid var(--error-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-non-veg::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--error-color);
+}
+
+.cafe-item-info {
+  padding: var(--spacing-md);
+}
+
+.cafe-item-title {
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+}
+
+.cafe-item-price {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-xs);
+}
+
+.cafe-item-current-price {
+  font-weight: 500;
+  margin-right: var(--spacing-xs);
+}
+
+.cafe-item-original-price {
+  color: var(--text-light);
+  text-decoration: line-through;
+  font-size: var(--font-size-xs);
+  margin-right: var(--spacing-xs);
+}
+
+.cafe-item-discount {
+  color: var(--success-color);
+  font-size: var(--font-size-xs);
+}
+
+.cafe-item-description {
+  color: var(--text-light);
+  font-size: var(--font-size-xs);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.4;
+}
+
+.cafe-item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delivery-estimate {
+  display: flex;
+  align-items: center;
+  color: var(--cafe-primary);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+}
+
+.delivery-estimate svg {
+  margin-right: 4px;
+  width: 14px;
+  height: 14px;
+}
+
+.cafe-add-to-cart {
+  background-color: var(--cafe-primary);
+  color: var(--white);
+  border: none;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: var(--font-size-xs);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cafe-add-to-cart:hover {
+  background-color: #6a3089;
+}
+
+.cafe-add-to-cart svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Promotional Banner */
+.promo-banner {
+  padding: var(--spacing-md) 0;
+}
+
+.promo-content {
+  background: linear-gradient(45deg, var(--cafe-secondary), #ff6d00);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  color: var(--white);
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.promo-text h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-xs);
+}
+
+.promo-text h3 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: var(--spacing-md);
+}
+
+.promo-text p {
+  font-size: var(--font-size-md);
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.9;
+}
+
+.promo-btn {
+  background-color: var(--white);
+  color: var(--cafe-secondary);
+  padding: 10px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: var(--font-size-md);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  border: none;
+}
+
+.promo-btn:hover {
+  background-color: #f8f8f8;
+}
+
+/* Popular Section */
+.popular-section {
+  padding: var(--spacing-xl) 0;
+}
+
+.popular-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+}
+
+/* Café Item Modal */
+.cafe-item-content {
+  padding: var(--spacing-xl);
+}
+
+.cafe-item-details {
+  display: flex;
+  gap: var(--spacing-xl);
+}
+
+.cafe-item-gallery {
+  width: 40%;
+}
+
+.cafe-item-main-image {
+  width: 100%;
+  height: 300px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--spacing-md);
+}
+
+.cafe-item-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cafe-item-detail-info {
+  flex: 1;
+}
+
+.cafe-item-detail-title {
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.cafe-item-detail-description {
+  color: var(--text-color);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-md);
+}
+
+.cafe-item-detail-prices {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.cafe-item-detail-current-price {
+  font-size: 24px;
+  font-weight: 500;
+  margin-right: var(--spacing-md);
+}
+
+.cafe-item-detail-original-price {
+  font-size: var(--font-size-md);
+  color: var(--text-light);
+  text-decoration: line-through;
+  margin-right: var(--spacing-md);
+}
+
+.cafe-item-detail-discount {
+  font-size: var(--font-size-md);
+  color: var(--success-color);
+}
+
+.cafe-item-options {
+  margin-bottom: var(--spacing-lg);
+}
+
+.options-title {
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+}
+
+.options-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background-color: var(--light-bg);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.option-item:hover, .option-item.active {
+  background-color: var(--cafe-light);
+  color: var(--cafe-primary);
+}
+
+.option-item.active {
+  border: 1px solid var(--cafe-primary);
+}
+
+.option-item input {
+  margin: 0;
+}
+
+.cafe-item-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.quantity-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-bg);
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.quantity-btn:hover {
+  background-color: var(--border-color);
+}
+
+.quantity-value {
+  width: 50px;
+  height: 36px;
+  border: none;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  text-align: center;
+  font-size: var(--font-size-sm);
+}
+
+.cafe-add-btn {
+  flex: 1;
+  background-color: var(--cafe-primary);
+  color: var(--white);
+  border: none;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: var(--font-size-md);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.cafe-add-btn:hover {
+  background-color: #6a3089;
+}
+
+.cafe-item-features {
+  margin-top: var(--spacing-lg);
+}
+
+.features-title {
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+}
+
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+  color: var(--text-color);
+}
+
+.feature-item svg {
+  color: var(--cafe-primary);
+}
+
+/* Responsive styles for Café page */
+@media only screen and (max-width: 768px) {
+  .cafe-hero-content {
+    flex-direction: column;
+  }
+  
+  .cafe-hero-text {
+    text-align: center;
+  }
+  
+  .cafe-hero-text h1 {
+    font-size: 32px;
+  }
+  
+  .cafe-hero-text h2 {
+    font-size: 22px;
+  }
+  
+  .delivery-info {
+    justify-content: center;
+  }
+  
+  .cafe-hero-image {
+    max-width: 100%;
+    margin-top: var(--spacing-lg);
+  }
+  
+  .category-tab {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
+  }
+  
+  .cafe-menu-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+  
+  .cafe-item-image {
+    height: 140px;
+  }
+  
+  .promo-text h2 {
+    font-size: 24px;
+  }
+  
+  .promo-text h3 {
+    font-size: 18px;
+  }
+  
+  .cafe-item-details {
+    flex-direction: column;
+  }
+  
+  .cafe-item-gallery {
+    width: 100%;
+    margin-bottom: var(--spacing-lg);
+  }
+}
