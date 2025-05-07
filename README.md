@@ -2,6 +2,8 @@
 Vibe coding
 # Flip Café - Modern E-commerce with Integrated Café Services
 
+See [here](https://harshkumard315.github.io/FLIPCAFE/).
+
 A modern e-commerce platform that combines Flipkart-like shopping experience with hyperlocal café delivery services. Built with HTML, CSS, and JavaScript, this project showcases a fully responsive design with dark/light theme support.
 
 ![Flip Café Screenshot](https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg)
